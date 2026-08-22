@@ -1,118 +1,165 @@
-# 🤖 AI Interview Platform 
-https://ai-interview-platform-frontend-yrdu.onrender.com/
+# AI Interview Platform
 
-**AI Interview Platform** is a full-stack **GenAI-powered interview SaaS platform** that combines personalized AI interviews with a real-world **Razorpay payment infrastructure** for premium access.
+AI Interview Platform is a full-stack interview application that uses Generative AI to create personalized technical and HR interviews based on a candidate's resume, skills, experience, and target role.
 
-The platform generates technical and HR interviews using a candidate's **resume, skills, experience, and target role**, while integrating **Razorpay APIs for order creation, checkout, payment verification, and premium feature activation**.
+The platform also includes voice-based interviews, AI-powered answer evaluation, performance analytics, PDF reports, and Razorpay integration for premium features.
 
-> **Core Focus:** GenAI + Razorpay API Integration + Full-Stack Engineering + Production Deployment
+**Live Demo:** https://ai-interview-platform-frontend-yrdu.onrender.com/
+**GitHub:** https://github.com/prajvalsharma18/AI-Interview-Platform
 
----
+## Features
 
-## 💳 Razorpay-Powered Premium Access
+### AI-Powered Interviews
 
-**Razorpay is a core part of the application's monetization and premium-access architecture.**
+* Generates technical and HR interview questions using LLMs
+* Personalizes questions based on the candidate's resume and target role
+* Supports adaptive interview difficulty
+* Evaluates candidate responses using AI
+* Provides scores, feedback, and performance insights
 
-The platform integrates Razorpay directly into the frontend and backend to implement a complete payment workflow:
+### Resume Processing
+
+* Upload and parse resumes
+* Extract skills, projects, education, and experience
+* Convert resume information into a structured candidate profile
+* Use the extracted profile for personalized interview generation
+
+### Voice Interviews
+
+* Text-to-speech for AI-generated questions
+* Speech recognition for candidate responses
+* Voice-based interview simulation
+* AI evaluation of transcribed responses
+
+### Performance Analytics
+
+* Interview history
+* Performance scores
+* Question-level evaluation
+* Detailed feedback
+* PDF interview reports
+
+### Authentication
+
+* User registration and login
+* Protected routes
+* JWT-based authentication
+* Firebase Authentication
+
+### Admin Dashboard
+
+* Platform-level analytics
+* Interview statistics
+* User insights
+
+## Razorpay Integration
+
+The platform uses Razorpay to provide premium features.
+
+The payment workflow is handled through the backend to keep sensitive Razorpay credentials secure.
 
 ```text
-User Selects Premium Plan
-          ↓
-Frontend → Backend Payment Request
-          ↓
-Backend Creates Razorpay Order
-          ↓
+User selects premium plan
+        |
+        v
+Frontend sends payment request
+        |
+        v
+Backend creates Razorpay order
+        |
+        v
 Razorpay Checkout
-          ↓
-User Completes Payment
-          ↓
-Payment Details Returned
-          ↓
-Backend Verifies Payment
-          ↓
-Premium Access Activated
+        |
+        v
+User completes payment
+        |
+        v
+Backend verifies payment signature
+        |
+        v
+Premium access activated
 ```
 
-### Razorpay Integration
+The integration includes:
 
-* 🔗 Razorpay API integration
-* 🧾 Server-side order creation
-* 💳 Razorpay Checkout integration
-* 🔐 Payment signature verification
-* ⚙️ Backend payment handling
-* ⭐ Premium feature activation
-* 🔒 Server-side secret management
-* ☁️ Razorpay integration in live production environment
+* Razorpay API integration
+* Server-side order creation
+* Razorpay Checkout
+* Payment signature verification
+* Payment response handling
+* Premium feature activation
+* Server-side secret management
 
-> **Engineering Focus:** The payment flow is handled through the backend, keeping Razorpay secret credentials server-side and preventing sensitive keys from being exposed to the client.
-
----
-
-## 🚀 Live Production Application
-
-The application is **deployed and running on Render**, with the frontend and backend connected in a live production environment.
-
-**Live Demo:**
-https://ai-interview-platform-frontend-yrdu.onrender.com/
-
-**GitHub Repository:**
-https://github.com/prajvalsharma18/AI-Interview-Platform
-
-### Complete Production Flow
+## System Architecture
 
 ```text
-Authentication
-      ↓
-Resume Upload
-      ↓
-AI Profile Extraction
-      ↓
-Personalized AI Interview
-      ↓
-Voice / Text Responses
-      ↓
-AI Answer Evaluation
-      ↓
-Analytics & PDF Report
-      ↓
-Razorpay Payment
-      ↓
-Premium Feature Access
+React + Vite Frontend
+          |
+          | REST APIs
+          v
+   Express.js Backend
+          |
+    +-----+-----+------+
+    |           |      |
+    v           v      v
+ MongoDB     LLM APIs Razorpay
+    |           |
+    |           v
+    |      AI Generation
+    |      and Evaluation
+    |
+    v
+User & Interview Data
 ```
 
----
+## Application Flow
 
-## 🎯 Problem Statement
+```text
+Registration / Login
+        |
+        v
+Resume Upload
+        |
+        v
+Resume Parsing
+        |
+        v
+Candidate Profile
+        |
+        v
+Target Role Selection
+        |
+        v
+AI Interview Generation
+        |
+        v
+Voice / Text Interview
+        |
+        v
+AI Answer Evaluation
+        |
+        v
+Performance Analytics
+        |
+        v
+PDF Report
+        |
+        v
+Premium Features
+        |
+        v
+Razorpay Checkout
+        |
+        v
+Payment Verification
+        |
+        v
+Premium Access
+```
 
-Traditional mock interview platforms provide generic questions that do not account for a candidate's actual skills, projects, experience, or target role.
+## AI Evaluation
 
-This platform addresses the problem using **AI-driven personalization**.
-
-Resume information is converted into a structured candidate profile, which is then used to generate relevant technical and HR questions and evaluate candidate responses.
-
-The platform also demonstrates how an AI product can be connected to a **real payment infrastructure** to support premium SaaS functionality.
-
----
-
-## 🧠 AI Capabilities
-
-### Resume Intelligence
-
-* Resume upload and parsing
-* Extraction of skills, projects, experience, and education
-* Structured candidate profile generation
-
-### Personalized Interview Generation
-
-* Role-specific technical questions
-* Resume-aware questions
-* HR and behavioral questions
-* Dynamic interview flow
-* Adaptive difficulty
-
-### AI Answer Evaluation
-
-Candidate responses are evaluated using AI based on:
+Candidate responses are evaluated using AI based on factors such as:
 
 * Technical correctness
 * Relevance
@@ -120,93 +167,9 @@ Candidate responses are evaluated using AI based on:
 * Completeness
 * Communication quality
 
-The evaluation results are converted into structured scores and performance insights.
+The evaluation is converted into structured scores and feedback that can be used to identify areas for improvement.
 
-### 🎙️ Voice Interviewing
-
-```text
-AI Question
-     ↓
-Text-to-Speech
-     ↓
-Candidate Voice Response
-     ↓
-Speech Recognition
-     ↓
-AI Evaluation
-     ↓
-Score + Feedback
-```
-
----
-
-# 🏗️ System Architecture
-
-```text
-                    ┌──────────────────────┐
-                    │      React Client    │
-                    │  Vite + Tailwind CSS │
-                    └──────────┬───────────┘
-                               │
-                     REST API / Payment
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Express Backend    │
-                    │      REST APIs       │
-                    └──────┬─────┬─────┬───┘
-                           │     │     │
-              ┌────────────┘     │     └────────────────┐
-              ▼                  ▼                      ▼
-        ┌───────────┐      ┌───────────┐        ┌────────────┐
-        │ MongoDB   │      │ LLM APIs  │        │  Razorpay  │
-        │           │      │           │        │    APIs    │
-        └───────────┘      └───────────┘        └────────────┘
-                               │
-                               ▼
-                       AI Generation &
-                       Evaluation Layer
-```
-
----
-
-# ✨ Key Features
-
-### 🤖 AI
-
-* AI-generated technical & HR interviews
-* Resume-based personalization
-* AI answer evaluation
-* Adaptive interview difficulty
-* Voice-based interview simulation
-
-### 💳 Razorpay
-
-* Razorpay API integration
-* Order creation
-* Razorpay Checkout
-* Payment verification
-* Premium access management
-
-### 📊 Platform
-
-* Resume parsing
-* Candidate profiling
-* Interview history
-* Performance analytics
-* PDF report generation
-* Authentication & protected routes
-
-### ☁️ Production
-
-* Live Render deployment
-* Frontend + backend production environment
-* External database integration
-* Environment-based secret management
-
----
-
-# 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -222,7 +185,8 @@ Score + Feedback
 * Express.js
 * MongoDB
 * Mongoose
-* JWT / Authentication Middleware
+* JWT
+* Authentication Middleware
 
 ### AI
 
@@ -231,114 +195,63 @@ Score + Feedback
 * Resume Parsing
 * Structured AI Evaluation
 * Speech Recognition
-* Speech Synthesis
+* Text-to-Speech
 
-### Payment & Services
+### Payments and Services
 
-* **Razorpay APIs**
+* Razorpay
 * Firebase Authentication
 * PDF Processing
 
 ### Deployment
 
 * Render
-* MongoDB Atlas / External MongoDB
+* MongoDB Atlas
 
----
+## Production Deployment
 
-# 🔄 Complete User Flow
+The application is deployed on Render with separate frontend and backend services.
 
-```text
-1. Registration / Login
-          ↓
-2. Resume Upload
-          ↓
-3. Resume Parsing
-          ↓
-4. Candidate Profile Creation
-          ↓
-5. Target Role Selection
-          ↓
-6. AI Interview Generation
-          ↓
-7. Voice / Text Interview
-          ↓
-8. AI Answer Evaluation
-          ↓
-9. Performance Analytics
-          ↓
-10. PDF Report
-          ↓
-11. Premium Features
-          ↓
-12. Razorpay Checkout
-          ↓
-13. Payment Verification
-          ↓
-14. Premium Access
-```
+The production environment includes:
 
----
+* React frontend
+* Express.js backend
+* MongoDB database
+* LLM API integration
+* Razorpay payment integration
+* Environment-based secret management
+* CORS configuration
 
-# 🧩 Engineering Challenges
+The complete application is available at:
 
-### 🤖 AI Integration
+https://ai-interview-platform-frontend-yrdu.onrender.com/
 
-Designing structured prompts and reliable AI responses for personalized question generation and answer evaluation.
+## Engineering Challenges
+### AI Integration
 
-### 📄 Resume Processing
+Designing prompts and structured responses for personalized question generation and consistent answer evaluation.
 
-Converting unstructured resume information into structured candidate data that can drive the interview-generation pipeline.
+### Resume Processing
 
-### 🎙️ Voice Interaction
+Converting unstructured resume data into a structured candidate profile that can be used by the interview-generation system.
 
-Handling speech recognition and speech synthesis while maintaining a smooth interview experience.
+### Voice Interaction
 
-### 💳 Razorpay Payment Integration
+Handling speech recognition and text-to-speech while maintaining a smooth interview experience.
 
-Implementing the complete frontend-to-backend payment lifecycle, including **order creation, Razorpay Checkout, payment response handling, and server-side payment verification**.
+### Payment Integration
 
-### ☁️ Production Deployment
+Implementing the complete Razorpay payment lifecycle, including order creation, checkout, payment response handling, and server-side signature verification.
 
-Configuring frontend/backend communication, CORS, authentication, environment variables, database connectivity, AI APIs, and Razorpay services for a live Render deployment.
+### Production Deployment
 
----
+Configuring frontend-backend communication, authentication, environment variables, database connectivity, AI APIs, Razorpay, and CORS for a live production environment.
 
-# ☁️ Production Deployment
+## Why This Project
 
-The application is **fully deployed and operational on Render**.
+This project was built to explore how Generative AI can be integrated into a complete full-stack application rather than being used only as a standalone LLM feature.
 
-```text
-                    Production
-                        │
-             ┌──────────┴──────────┐
-             ▼                     ▼
-       React Frontend        Express Backend
-          Render                  Render
-                                   │
-              ┌────────────────────┼────────────────────┐
-              ▼                    ▼                    ▼
-           MongoDB              LLM APIs            Razorpay
-                                                     APIs
-```
+It combines AI-powered interview generation and evaluation with resume processing, voice interaction, authentication, analytics, payment infrastructure, and cloud deployment.
 
-The production application supports the complete end-to-end workflow from **authentication and resume processing to AI interview generation, evaluation, reporting, and Razorpay-powered premium access**.
-
----
-
-# 📌 Why This Project?
-
-This project demonstrates the ability to build and deploy a **real-world AI SaaS application** rather than a standalone LLM prototype.
-
-It combines:
-
-**GenAI → REST APIs → MongoDB → Authentication → Voice AI → Razorpay Payment Infrastructure → Cloud Deployment**
-
-Most importantly, the project demonstrates practical experience integrating **Razorpay APIs into a live full-stack application**, including the backend payment workflow and premium-access logic.
-
----
-* Admin analytics dashboard
-* Automated interview difficulty adaptation
-
----
+The project also provides practical experience with integrating Razorpay into a production application, including order creation, checkout, server-side payment verification, and premium feature activation.
 
