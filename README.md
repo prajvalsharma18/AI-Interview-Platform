@@ -351,6 +351,3 @@ Most importantly, the project demonstrates practical experience integrating **Ra
 
 ---
 
-# 📄 License
-
-MIT
