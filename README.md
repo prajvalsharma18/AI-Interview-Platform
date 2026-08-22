@@ -337,15 +337,6 @@ It combines:
 Most importantly, the project demonstrates practical experience integrating **Razorpay APIs into a live full-stack application**, including the backend payment workflow and premium-access logic.
 
 ---
-
-# 🔮 Future Improvements
-
-* Multi-language interviews
-* Real-time AI interviewer
-* Advanced candidate benchmarking
-* Job-description-aware interview generation
-* More sophisticated evaluation metrics
-* Interview recommendation engine
 * Admin analytics dashboard
 * Automated interview difficulty adaptation
 
