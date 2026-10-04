@@ -4,8 +4,8 @@ AI Interview Platform is a full-stack interview application that uses Generative
 
 The platform also includes voice-based interviews, AI-powered answer evaluation, performance analytics, PDF reports, and Razorpay integration for premium features.
 
-**Live Demo:** https://ai-interview-platform-frontend-yrdu.onrender.com/
-**GitHub:** https://github.com/prajvalsharma18/AI-Interview-Platform
+**Live Demo:** https://ai-interview-platform-frontend-yrdu.onrender.com
+
 
 ## Features
 
