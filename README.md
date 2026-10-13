@@ -169,89 +169,8 @@ Candidate responses are evaluated using AI based on factors such as:
 
 The evaluation is converted into structured scores and feedback that can be used to identify areas for improvement.
 
-## Tech Stack
 
-### Frontend
 
-* React
-* Vite
-* Tailwind CSS
-* Redux Toolkit
-* Axios
 
-### Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT
-* Authentication Middleware
-
-### AI
-
-* OpenRouter
-* LLM APIs
-* Resume Parsing
-* Structured AI Evaluation
-* Speech Recognition
-* Text-to-Speech
-
-### Payments and Services
-
-* Razorpay
-* Firebase Authentication
-* PDF Processing
-
-### Deployment
-
-* Render
-* MongoDB Atlas
-
-## Production Deployment
-
-The application is deployed on Render with separate frontend and backend services.
-
-The production environment includes:
-
-* React frontend
-* Express.js backend
-* MongoDB database
-* LLM API integration
-* Razorpay payment integration
-* Environment-based secret management
-* CORS configuration
-
-The complete application is available at:
-
-https://ai-interview-platform-frontend-yrdu.onrender.com/
-
-## Engineering Challenges
-### AI Integration
-
-Designing prompts and structured responses for personalized question generation and consistent answer evaluation.
-
-### Resume Processing
-
-Converting unstructured resume data into a structured candidate profile that can be used by the interview-generation system.
-
-### Voice Interaction
-
-Handling speech recognition and text-to-speech while maintaining a smooth interview experience.
-
-### Payment Integration
-
-Implementing the complete Razorpay payment lifecycle, including order creation, checkout, payment response handling, and server-side signature verification.
-
-### Production Deployment
-
-Configuring frontend-backend communication, authentication, environment variables, database connectivity, AI APIs, Razorpay, and CORS for a live production environment.
-
-## Why This Project
-
-This project was built to explore how Generative AI can be integrated into a complete full-stack application rather than being used only as a standalone LLM feature.
-
-It combines AI-powered interview generation and evaluation with resume processing, voice interaction, authentication, analytics, payment infrastructure, and cloud deployment.
-
-The project also provides practical experience with integrating Razorpay into a production application, including order creation, checkout, server-side payment verification, and premium feature activation.
 
